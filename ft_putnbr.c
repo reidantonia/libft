@@ -6,11 +6,16 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:42:02 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 17:42:22 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/08 12:07:14 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_putnbr(int nb)
 {

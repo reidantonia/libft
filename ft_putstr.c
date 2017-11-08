@@ -6,11 +6,18 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 13:39:52 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 17:43:16 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/08 12:05:00 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str)
+#include "libft.h"
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char const *str)
 {
 	while (*str != '\0')
 	{

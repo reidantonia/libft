@@ -13,7 +13,6 @@ SRCS =  ft_memset.c     \
         ft_strncpy.c    \
         ft_strcat.c     \
         ft_strncat.c    \
-        ft_strlcat.c    \
         ft_strchr.c     \
         ft_strrchr.c    \
         ft_strstr.c     \
@@ -31,12 +30,13 @@ SRCS =  ft_memset.c     \
 
 OBJS =  $(SRCS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME):
-	gcc  $(FLAGS) -o $(NAME) $(SRCS) -I.
+	gcc $(FLAGS) -c $(SRCS)
+	ar rc $(NAME) $(OBJS) 
 
 clean:
 	/bin/rm -f $(OBJS)

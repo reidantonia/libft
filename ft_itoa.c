@@ -6,7 +6,7 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:56:27 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 19:21:44 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/08 11:49:50 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		digits;
 	int		neg_flag;
-	char	ip;
 
 	neg_flag = 0;
 	if (n < 0)

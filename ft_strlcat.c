@@ -6,7 +6,7 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:41:09 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:42:50 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/08 10:39:00 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
+	(void*)src;
+	(void*)dest;
+	/*
 	int	counter;
 	int	i;
 
@@ -29,6 +32,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		counter++;
 		i++;
 	}
-	dest[counter] = '\0';
-	return (dest);
+	dest[counter] = '\0';*/
+	return (size);
 }
