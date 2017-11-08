@@ -6,9 +6,11 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:36:32 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:36:50 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/08 14:10:32 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
