@@ -19,14 +19,13 @@ char	*ft_strmap(char const *s, char (*f)(char))
 
 	if (!s)
 		return (NULL);
-	str = (char*)malloc(sizeof(char) * (ft_strlen((char*)s) + 1));
+	str = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == NULL)
 		return (NULL);
 	x = 0;
 	while (s[x] != '\0')
 	{
-		f(s[x]);
-		str[x] = s[x];
+		str[x] = f(s[x]);
 		x++;
 	}
 	str[x] = '\0';

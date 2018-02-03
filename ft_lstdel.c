@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/08 20:56:51 by areid             #+#    #+#             */
-/*   Updated: 2017/11/19 16:05:37 by areid            ###   ########.fr       */
+/*   Created: 2017/11/18 13:04:43 by areid             #+#    #+#             */
+/*   Updated: 2017/11/18 22:15:20 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, const char *src)
-{
-	int	counter;
-	int	i;
+#include "libft.h"
 
-	counter = 0;
-	i = 0;
-	if (src == '\0' && dest == '\0')
-		return (0);
-	while (dest[counter] != '\0')
-		counter++;
-	while (src[i] != '\0')
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+{
+	t_list	*tmp;
+	t_list	*chain;
+
+	chain = *alst;
+	while (chain)
 	{
-		dest[counter] = src[i];
-		counter++;
-		i++;
+		tmp = chain->next;
+		(*del)(chain->content, chain->content_size);
+		free(chain);
+		chain = tmp;
 	}
-	dest[counter] = '\0';
-	return (dest);
+	*alst = NULL;
 }

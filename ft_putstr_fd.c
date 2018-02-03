@@ -6,19 +6,16 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:43:44 by areid             #+#    #+#             */
-/*   Updated: 2017/11/08 12:12:57 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/18 18:17:53 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
 void	ft_putstr_fd(char const *s, int fd)
 {
+	if (!s || !fd)
+		return ;
 	while (*s != '\0')
 	{
 		ft_putchar_fd(*s++, fd);

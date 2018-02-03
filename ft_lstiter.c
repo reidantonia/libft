@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/08 20:56:51 by areid             #+#    #+#             */
-/*   Updated: 2017/11/19 16:05:37 by areid            ###   ########.fr       */
+/*   Created: 2017/11/18 19:59:07 by areid             #+#    #+#             */
+/*   Updated: 2017/11/18 19:59:40 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, const char *src)
-{
-	int	counter;
-	int	i;
+#include "libft.h"
 
-	counter = 0;
-	i = 0;
-	if (src == '\0' && dest == '\0')
-		return (0);
-	while (dest[counter] != '\0')
-		counter++;
-	while (src[i] != '\0')
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+{
+	if (lst != NULL && f != NULL)
 	{
-		dest[counter] = src[i];
-		counter++;
-		i++;
+		while (lst != NULL)
+		{
+			(*f)(lst);
+			lst = lst->next;
+		}
 	}
-	dest[counter] = '\0';
-	return (dest);
 }

@@ -6,29 +6,24 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:19:53 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:20:44 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/18 13:48:20 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *str, int c)
 {
-	int		counter;
-	char	*s;
+	int		length;
 
-	s = (char*)str;
-	counter = 0;
-	while (*s++)
+	length = 0;
+	while (str[length] != '\0')
+		length++;
+	length++;
+	while (length--)
 	{
-		counter++;
+		if (str[length] == c)
+			return ((char*)(str + length));
 	}
-	counter--;
-	s--;
-	while (counter > 0)
-	{
-		if (*s == c)
-			return (s);
-		counter--;
-		s--;
-	}
-	return (0);
+	return (NULL);
 }

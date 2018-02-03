@@ -5,17 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/08 09:09:56 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:12:40 by areid            ###   ########.fr       */
+/*   Created: 2017/11/18 11:46:13 by areid             #+#    #+#             */
+/*   Updated: 2017/11/19 16:03:35 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+#include "libft.h"
+
+char	*ft_strstr(const char *s, const char *to_find)
 {
-	int x;
-	int y;
+	int		x;
+	int		y;
+	char	*str;
 
 	x = 0;
+	str = (char*)s;
+	if (*to_find == '\0')
+		return (str);
 	while (str[x] != '\0')
 	{
 		y = 0;

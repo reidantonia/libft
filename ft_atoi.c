@@ -6,34 +6,33 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 09:20:37 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:12:38 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/19 15:29:36 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *s)
 {
-	int result;
-	int counter;
-	int is_negative;
+	int				result;
+	int				i;
+	int				is_negative;
 
-	counter = 0;
+	i = 0;
 	result = 0;
 	is_negative = 1;
-	while (str == '\0')
-		return (0);
-	while (str[counter] <= 32)
-		counter++;
-	if (str[counter] == '+')
-		counter++;
-	if (str[counter] == '-')
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == '\v'
+			|| s[i] == '\f' || s[i] == '\r')
+		i++;
+	if (s[i] == '+')
+		i++;
+	else if (s[i] == '-')
 	{
-		counter++;
+		i++;
 		is_negative = -1;
 	}
-	while ((str[counter] >= '0') && (str[counter] <= '9'))
+	while ((s[i] >= '0') && (s[i] <= '9'))
 	{
-		result = result * 10 + str[counter] - 48;
-		counter++;
+		result = result * 10 + s[i] - 48;
+		i++;
 	}
 	return (result * is_negative);
 }

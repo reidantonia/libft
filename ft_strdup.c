@@ -6,13 +6,13 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:45:22 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:12:38 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/18 19:55:15 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		length;
 	char	*p;

@@ -6,7 +6,7 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:40:06 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:12:40 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/19 01:46:52 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char	*ft_strtrim(char const *s)
 {
-	int		length;
 	int		x;
 	int		y;
+	int		i;
 	char	*str;
+	int		strl;
 
-	length = ft_strlen((char*)s);
 	x = 0;
-	y = length;
+	if (!s)
+		return (NULL);
+	y = ft_strlen(s) - 1;
 	while (s[x] == ' ' || s[x] == '\t' || s[x] == '\n')
 		x++;
 	while (s[y] == ' ' || s[y] == '\t' || s[y] == '\n')
 		y--;
-	if (y <= x)
-		return (0);
-	str = (char*)malloc(sizeof(char) * (y - x + 1));
-	if (str == NULL)
+	if ((strl = (y - x) + 1) < 0)
+		strl = 0;
+	if (x == 0 && (y == (int)ft_strlen(s) - 1))
+		return (ft_strdup(s));
+	if ((str = ft_strnew(strl)) == NULL)
 		return (NULL);
-	while (x < y)
-	{
-		str[length] = s[x];
-		x++;
-		length++;
-	}
-	str[length] = '\0';
+	i = 0;
+	while (x <= y)
+		str[i++] = s[x++];
+	str[y + 1] = '\0';
 	return (str);
 }

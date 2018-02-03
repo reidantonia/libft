@@ -6,7 +6,7 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:21:02 by areid             #+#    #+#             */
-/*   Updated: 2017/11/08 10:40:50 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/18 17:31:58 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ char	*ft_strnstr(const char *str, const char *fnd, size_t len)
 
 	s = (char*)str;
 	x = 0;
+	if (*fnd == '\0')
+		return (s);
 	while (s[x] != '\0' && x < len)
 	{
 		y = 0;
-		while (s[x + y] ==  fnd[y])
+		while (s[x + y] == fnd[y] && (x + y) < len)
 		{
 			y++;
 			if (fnd[y] == '\0')

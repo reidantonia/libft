@@ -6,19 +6,23 @@
 /*   By: areid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 11:35:39 by areid             #+#    #+#             */
-/*   Updated: 2017/11/07 16:12:38 by areid            ###   ########.fr       */
+/*   Updated: 2017/11/18 12:36:35 by areid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int i;
+#include <stdio.h>
 
-	i = 0;
-	while (s1[i] == s2[i] && ((s1[i] && s2[i]) != '\0'))
+int		ft_strcmp(const char *s1, const char *s2)
+{
+	const unsigned char *f1;
+	const unsigned char *f2;
+
+	f1 = (const unsigned char*)s1;
+	f2 = (const unsigned char*)s2;
+	while (*f1 == *f2 && ((*f1 && *f2) != '\0'))
 	{
-		if (s1[i] != '\0')
-			i++;
+		f1++;
+		f2++;
 	}
-	return (s1[i] - s2[i]);
+	return (*f1 - *f2);
 }
